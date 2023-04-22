@@ -9,9 +9,11 @@ name: Create Release
 jobs:
   build:
     name: Create Release
-    permissions: write-all
-    environment: dev
-    # needs: pre-pkr
+    permissions:
+      id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
